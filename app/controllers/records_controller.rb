@@ -4,11 +4,16 @@ class RecordsController < ApplicationController
   end
 
   def create
+    binding.pry
     @record = Record.new(record_params)
 
     if @record.save
+      works = true
+      binding.pry
       render json: @record
     else
+      works = false
+      binding.pry
       render json: @record.errors, status: :unprocessable_entity
     end
   end
