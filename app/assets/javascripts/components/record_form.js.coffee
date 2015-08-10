@@ -17,6 +17,7 @@
   render: ->
       React.DOM.form
         className: 'form-inline'
+        onSubmit: @handleSubmit
         React.DOM.div
           className: 'form-group'
           React.DOM.input
@@ -47,6 +48,5 @@
         React.DOM.button
           type: 'submit'
           className: 'btn btn-primary'
-          onSubmit: @handleSubmit
           disabled: !@valid()
           'Create record'
